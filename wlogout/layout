@@ -1,0 +1,24 @@
+{
+    "label" : "lock",
+    "action" : "loginctl lock-session",
+    "text" : "",
+    "keybind" : "V"
+}
+{
+    "label" : "logout",
+    "action" : "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit",
+    "text" : "",
+    "keybind" : "D"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "",
+    "keybind" : "R"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "",
+    "keybind" : "E"
+}

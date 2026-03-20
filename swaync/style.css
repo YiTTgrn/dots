@@ -1,0 +1,154 @@
+@import "/home/rapha/.config/colors/colors.css";
+
+* {
+    font-family: "JetbrainsMono Extrabold";
+}
+
+
+
+/*---------- Notification ----------*/
+
+.notification {
+    background: alpha(@base,.95);
+    color: @text;
+    border: 3px solid @crust;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.body {
+    color: @text;
+}
+
+.summary {
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: @text;
+    text-shadow: none;
+}
+
+.time {
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: @text;
+    text-shadow: none;
+    margin-right: 18px;
+}
+
+.close-button {
+    background-color: alpha(@red,.7);
+    color: @text;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 6px;
+}
+
+.notification-default-action:hover, .notification-action:hover {
+    color: @text;
+    background: transparent;
+}
+
+.notification.critical progress {
+    background-color: @red;
+}
+
+.notification.low progress, .notification.normal progress {
+    background-color: @text;
+}
+
+
+
+/*---------- Control Center ----------*/
+
+.control-center {
+    background-color: alpha(@base,.95);
+    color: @subtext0;
+    border: 3px solid @crust;
+}
+
+
+
+/*---------- Notifications expanded-group ----------*/
+
+.notification-group {
+    background-color: transparent;
+    margin: 2px 8px 2px 8px;
+    font-size: 14px;
+}
+
+.notification-group-icon {
+    color: @subtext0;
+}
+
+.notification-group-headers {
+    color: @green;
+}
+
+.notification-group-collapse-button, .notification-group-close-all-button {
+    background: transparent;
+    color: @subtext0;
+    margin: 4px;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.notification-group-collapse-button:hover {
+    background: alpha(@orange,.7);
+    color: @text;
+}
+
+.notification-group-close-all-button:hover {
+    background: alpha(@red,.7);
+    color: @text;
+}
+
+/*---------- widget title ----------*/
+
+.widget-title {
+    color: @text;
+}
+.widget-title>button {
+    font-size: 1rem;
+    color: @subtext0;
+    background: @base;
+    box-shadow: none;
+}
+
+.widget-title>button:hover {
+    background: alpha(@red,.7);
+    color: @text;
+}
+
+
+
+/*---------- volume & backlight widget ----------*/
+
+.widget-volume, .widget-backlight {
+    background: transparent;
+    color: @subtext0;
+    font-size: x-large;
+}
+
+.widget-volume:hover, .widget-backlight:hover {
+	color: @text;
+	transition: all .3s ease;
+}
+
+
+
+/*---------- sliders ----------*/
+
+trough slider {
+    background: @subtext0;
+}
+
+trough slider:hover {
+    background: @text;
+    transition: all .3s ease;
+}
+
+trough highlight {
+    background: alpha(@green,.70);
+}

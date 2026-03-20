@@ -1,0 +1,174 @@
+{
+	"layer": "top",
+        "position": "top",
+        "reload_style_on_change": true,
+        "modules-left": ["hyprland/workspaces","custom/separator","hyprland/window"],
+        "modules-center": ["clock","custom/notification"],
+        "modules-right": ["group/expand","group/connection","custom/separator","group/sliders","custom/separator","group/system"],
+
+
+	"custom/separator": {
+		"format": "|",
+		"tooltip": false
+	},
+	"hyprland/window": {
+		"format": "{initialTitle}",
+		"format-alt": "{title}",
+		"icon": true,
+		"icon-size": 16,
+		"tooltip": false
+	},
+        "hyprland/workspaces": {
+		"format": "{icon}",
+		"format-icons": {
+			"active": "󰫢",
+			"urgent": "󱈸"
+		},
+		"persistent-workspaces": {
+			"*": [ 1,2,3,4,5 ]
+		}
+        },
+        "custom/notification": {
+		"tooltip": false,
+		"format": "󰂚",
+		"on-click": "swaync-client -t -sw",
+		"escape": true
+        },
+        "clock": {
+		"locale": "fr_FR. UTF-8",
+		"format": "  {:%H:%M}",
+		"format-alt": "󰃭  {:L%a %d %b %Y}",
+		"interval": 1,
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"format": {
+				"today": "<span color='#a6da95'><b>{}</b></span>"
+			}
+		}
+        },
+
+/*---------- Group expand (icon tray) ----------*/
+
+        "group/expand": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 600,
+			"transition-to-left": true,
+			"click-to-reveal": true
+		},
+		"modules": ["custom/expand","tray","custom/separator"]
+	},
+        "tray": {
+		"icon-size": 14,
+		"spacing": 10
+        },
+        "custom/expand": {
+		"format": "",
+		"tooltip": false
+        },
+
+/*---------- Group connection (bluetooth, wifi) ----------*/
+
+	"group/connection": {
+		"modules": ["bluetooth","network"],
+		"orientation": "horizontal"
+	},
+        "bluetooth": {
+		"format-on": "{icon}",
+		"format-off": "{icon}",
+		"format-disabled": "{icon}",
+		"format-connected": "{device_alias} {icon}",
+		"tooltip-format": "Activé",
+		"tooltip-format-connected": "{device_alias} | {device_battery_percentage}%",
+		"tooltip-format-disabled": "Désactivé",
+		"on-double-click-middle": "bluetooth toggle",
+		"on-double-click-right": "blueman-manager",
+		"format-icons": {
+			"on": "",
+			"off": "󰂲",
+			"disabled": "󰂲",
+			"connected": "󰂱"
+		}
+        },
+        "network": {
+		"format-wifi": "{icon}",
+		"format-ethernet": "{icon}",
+		"format-disabled": "{icon}",
+		"format-disconnected": "{icon}",
+		"format-alt": "{essid} {icon}",
+		"tooltip-format-disconnected": "Déconnecté",
+		"tooltip-format-wifi": "{essid} | ({signalStrength}%)",
+		"tooltip-format-ethernet": "{ifname} 󱎔",
+		"tooltip-format-disabled": "Désactivé",
+		"on-double-click-right": "kitty --class wifibt -e env -u COLORTERM TERM=xterm-old nmtui",
+		"on-double-click-middle": "wifi toggle",
+		"format-icons": {
+			"wifi": [ "󰤟", "󰤢", "󰤥", "󰤨" ],
+			"ethernet": "󱎔",
+			"disconnected": "󰤭",
+			"disabled": "󰤮"
+		}
+        },
+
+/*---------- Group sliders (volume, backlight) ----------*/
+
+	"group/sliders": {
+		"modules": ["pulseaudio","backlight"],
+		"orientation": "horizontal"
+	},
+	"pulseaudio": {
+		"format": "{icon}",
+		"format-muted": " ",
+		"format-alt": "{volume}% {icon}",
+		"tooltip-format": " {volume}% {icon}",
+		"format-icons": {
+			"alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+			"alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+			"headphone": " ",
+			"headset": " ",
+			"default": [" ", " ", " "]
+		},
+		"reverse-scrolling": true,
+		"reverse-mouse-scrolling": true,
+		"scroll-step": 1,
+		"on-double-click-middle": "pactl set-sink-mute 0 toggle",
+		"on-double-click-right": "pavucontrol",
+		"ignored-sinks": ["Easy Effects Sink"]
+	},
+	"backlight": {
+		"format": "{icon}",
+		"format-icons": ["󰃚","󰃛","󰃜","󰃝","󰃞","󰃟","󰃠"],
+		"format-alt": "{percent}% {icon}",
+		"tooltip-format": "{percent}% {icon}",
+		"reverse-scrolling": true,
+		"reverse-mouse-scrolling": true,
+		"on-double-click-middle": "brightnessctl -s set 100%"
+	},
+
+/*---------- Group system (battery, power button) ----------*/
+
+	"group/system": {
+		"modules": ["battery","custom/power"],
+		"orientation": "horizontal"
+	},
+	"battery": {
+		"interval": 30,
+		"states": {
+			"good": 90,
+			"warning": 30,
+			"critical": 20
+		},
+		"tooltip-format": "{capacity}% | {timeTo}",
+		"format": "{icon}",
+		"format-charging": "{capacity}% 󰂄",
+		"format-plugged": "{capacity}% 󰂄 ",
+		"format-alt": "{capacity}% {icon}",
+		"format-icons": ["󰁻","󰁼","󰁾","󰂀","󰂂","󰁹"]
+        },
+	"custom/power": {
+		"format": "",
+		"on-click": "wlogout -b 4 -s",
+		"tooltip-format": "Marche/Arret"
+	}
+
+} 

@@ -1,0 +1,86 @@
+@import "/home/rapha/.config/colors/colors.css";
+
+* {
+    background-image: none;
+    font-size: 20px;
+}
+
+window {
+    background-color: alpha(@mantle,.95);
+}
+
+button {
+    color: @text;
+    background-color: alpha(@crust,.5);
+    outline-style: none;
+    border: 1px solid @crust;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    border-radius: 0px;
+    box-shadow: none;
+    text-shadow: none;
+    animation: gradient_f 20s ease-in infinite;
+    font-family: JetBrains Mono Extrabold;
+}
+
+button:focus {
+    color: @crust;
+    background-color: alpha(@green,.5);
+    border: 1px solid @green;
+    background-size: 40%;
+    border-radius: 20px;
+    animation: gradient-f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.1682);
+}
+button:hover {
+    color: alpha(@green,0);
+}
+
+button:focus#lock, button:active#lock{
+    background-image: image(url("/usr/share/wlogout/icons/lock_crust.png"), url("/usr/local/share/wlogout/icons/lock_crust.png"));
+    border-radius: 20px;
+    margin : 20px 0px 20px 20px;
+}
+
+button:focus#logout, button:active#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout_crust.png"), url("/usr/local/share/wlogout/icons/logout_crust.png"));
+    border-radius: 20px;
+    margin : 20px 0px 20px 0px;
+}
+
+button:focus#shutdown, button:active#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown_crust.png"), url("/usr/local/share/wlogout/icons/shutdown_crust.png"));
+    border-radius: 20px;
+    margin : 20px 0px 20px 0px;
+}
+
+button:focus#reboot, button:active#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot_crust.png"), url("/usr/local/share/wlogout/icons/reboot_crust.png"));
+    border-radius: 20px;
+    margin : 20px 0px 20px 0px;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+    border-radius: 20px 0px 0px 20px;
+    margin : 100px 0px 100px 20px;
+}
+
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin : 100px 0px 100px 0px;
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    border-radius: 0px 20px 20px 0px;
+    margin : 100px 0px 100px 0px;
+}
+
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin : 100px 0px 100px 0px;
+}
