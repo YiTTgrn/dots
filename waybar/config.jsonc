@@ -39,7 +39,8 @@
 		"format": "  {:%H:%M}",
 		"format-alt": "󰃭  {:L%a %d %b %Y}",
 		"interval": 1,
-		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+/*		"tooltip-format": "<tt><small>{calendar}</small></tt>",*/
+		"tooltip-format": "<tt><small><span size='12pt' font='JetBrains Mono Extrabold'>{calendar}</span></small></tt>",
 		"calendar": {
 			"format": {
 				"today": "<span color='#a6da95'><b>{}</b></span>"
@@ -118,7 +119,7 @@
 	},
 	"pulseaudio": {
 		"format": "{icon}",
-		"format-muted": " ",
+		"format-muted": " ", 
 		"format-alt": "{volume}% {icon}",
 		"tooltip-format": " {volume}% {icon}",
 		"format-icons": {
@@ -130,7 +131,7 @@
 		},
 		"reverse-scrolling": true,
 		"reverse-mouse-scrolling": true,
-		"scroll-step": 1,
+		"scroll-step": 5,
 		"on-double-click-middle": "pactl set-sink-mute 0 toggle",
 		"on-double-click-right": "pavucontrol",
 		"ignored-sinks": ["Easy Effects Sink"]
@@ -140,6 +141,7 @@
 		"format-icons": ["󰃚","󰃛","󰃜","󰃝","󰃞","󰃟","󰃠"],
 		"format-alt": "{percent}% {icon}",
 		"tooltip-format": "{percent}% {icon}",
+		"scroll-step": 5,
 		"reverse-scrolling": true,
 		"reverse-mouse-scrolling": true,
 		"on-double-click-middle": "brightnessctl -s set 100%"

@@ -1,6 +1,6 @@
 @import "/home/rapha/.config/colors/colors.css";
 *{
-    font-size: 15px;
+    font-size: 14px;
     font-family: "JetBrains Mono Extrabold";
 }
 
@@ -13,16 +13,18 @@ window#waybar {
 }
 
 .modules-left, .modules-center, .modules-right {
-	padding: 7px;
-	margin: 5px;
+	padding: 5px;
+	margin: 2px;
 	border-radius: 20px;
-	background: alpha(@base,.95);
+	background: alpha(@base,.85);
 	box-shadow: 0px 0px 2px alpha(@mantle,.6);
+	border: 1px solid @crust;
 }
 
 tooltip, tooltip label {
-	background: alpha(@base,.95);
+	background: alpha(@base,.25);
 	color: @text;
+	border-radius: 15px;
 }
 
 
@@ -53,7 +55,7 @@ tooltip, tooltip label {
 }
 #workspaces button.empty {
 	color: alpha(@subtext0,.3);
-	background: none;
+	background: alpha(@mantle,.25);
 	text-shadow: 0px 0px 1.5px alpha(@overlay2,.15);
 	border: 1px solid alpha(@subtext0,.05);
 }
@@ -122,27 +124,27 @@ tooltip, tooltip label {
 }
 
 #system {
-	background: linear-gradient( 135deg, alpha(@teal,.7) 20%, alpha(@green,.7) 100%);
+	background: linear-gradient( 135deg, alpha(@teal,.7) 30%, alpha(@green,.7) 100%);
 	border: 1px solid @green;
 }
 #system:hover {
-	background: linear-gradient( 135deg, alpha(@teal,1) 20%, alpha(@green,1) 100%);
+	background: linear-gradient( 135deg, alpha(@teal,1) 30%, alpha(@green,1) 100%);
 }
 
 #sliders {
-	background: linear-gradient( 135deg, alpha(@sapphire,.7) 20%, alpha(@sky,.7) 100%);
+	background: linear-gradient( 135deg, alpha(@sapphire,.7) 30%, alpha(@sky,.7) 100%);
 	border: 1px solid @sky;
 }
 #sliders:hover {
-	background: linear-gradient( 135deg, alpha(@sapphire,1) 20%, alpha(@sky,1) 100%);
+	background: linear-gradient( 135deg, alpha(@sapphire,1) 30%, alpha(@sky,1) 100%);
 }
 
 #connection {
-	background: linear-gradient( 135deg, alpha(@lavender,.7) 20%, alpha(@blue,.7) 100%);
+	background: linear-gradient( 135deg, alpha(@lavender,.7) 30%, alpha(@blue,.7) 100%);
 	border: 1px solid @blue;
 }
 #connection:hover {
-	background: linear-gradient( 135deg, alpha(@lavender,1) 20%, alpha(@blue,1) 100%);
+	background: linear-gradient( 135deg, alpha(@lavender,1) 30%, alpha(@blue,1) 100%);
 }
 
 #custom-expand{
@@ -162,7 +164,7 @@ tooltip, tooltip label {
 /*---------- Tray ----------*/
 
 #tray{
-	background: linear-gradient( 135deg, alpha(@red,.7) 20%, alpha(@mauve,.7) 100%);
+	background: linear-gradient( 135deg, alpha(@red,.7) 5%, alpha(@mauve,.7) 100%);
 	border: 1px solid @mauve;
 	transition: all .3s ease; 
 }
