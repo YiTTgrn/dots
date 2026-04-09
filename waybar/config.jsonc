@@ -82,7 +82,7 @@
 		"tooltip-format": "Activé",
 		"tooltip-format-connected": "{device_alias} | {device_battery_percentage}%",
 		"tooltip-format-disabled": "Désactivé",
-		"on-double-click-middle": "bluetooth toggle",
+		"on-double-click-middle": "rfkill toggle bluetooth",
 		"on-double-click-right": "blueman-manager",
 		"format-icons": {
 			"on": "",
@@ -102,7 +102,7 @@
 		"tooltip-format-ethernet": "{ifname} 󱎔",
 		"tooltip-format-disabled": "Désactivé",
 		"on-double-click-right": "kitty --class wifibt -e env -u COLORTERM TERM=xterm-old nmtui",
-		"on-double-click-middle": "wifi toggle",
+		"on-double-click-middle": "rfkill toggle wifi",
 		"format-icons": {
 			"wifi": [ "󰤟", "󰤢", "󰤥", "󰤨" ],
 			"ethernet": "󱎔",
