@@ -16,7 +16,7 @@ window#waybar {
 	padding: 5px;
 	margin: 2px;
 	border-radius: 20px;
-	background: alpha(@base,.85);
+	background: alpha(@base,.95);
 	box-shadow: 0px 0px 2px alpha(@mantle,.6);
 	border: 1px solid @crust;
 }
@@ -55,9 +55,9 @@ tooltip, tooltip label {
 }
 #workspaces button.empty {
 	color: alpha(@subtext0,.3);
-	background: alpha(@mantle,.25);
-	text-shadow: 0px 0px 1.5px alpha(@overlay2,.15);
-	border: 1px solid alpha(@subtext0,.05);
+	background: alpha(@mantle,.35);
+	text-shadow: 0px 0px 1.5px alpha(@subtext0,.15);
+	border: 1px solid alpha(@subtext0,.1);
 }
 #workspaces button.empty.active {
 	color: @green;
